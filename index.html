@@ -1,46 +1,686 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello Will</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nausta · Finance, accounting and counsel for companies that intend to last</title>
+<meta name="description" content="Accountancy, tax, fractional CFO and deal advisory for funded startups and profitable private companies. One firm from the bookkeeping to the deal, with fixed fees and a partner you can ring.">
+<meta property="og:title" content="Nausta · Finance, accounting and counsel for companies that intend to last">
+<meta property="og:description" content="Accountancy, tax, fractional CFO and deal advisory for funded startups and profitable private companies. One firm from the bookkeeping to the deal.">
+<meta property="og:type" content="website">
+<!-- TODO: replace with the real domain and a real OG image once they exist -->
+<meta property="og:url" content="https://methodik.github.io/will-website/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230A0A0A'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Archivo,sans-serif' font-weight='700' font-size='18' fill='%23F7F6F2'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  "name": "Nausta",
+  "description": "Accountancy, tax, fractional CFO and deal advisory for funded startups and profitable private companies.",
+  "telephone": "+44 7XXX XXX XXX",
+  "email": "hello@nausta.co.uk",
+  "url": "https://methodik.github.io/will-website/",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "London",
+    "addressCountry": "GB",
+    "streetAddress": "[PLACEHOLDER]"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "08:00",
+    "closes": "18:00"
+  }
+}
+</script>
+<style>
+:root{
+  --paper:#F7F6F2;
+  --ink:#0A0A0A;
+  --grey:#6B6B66;
+  --faint:#9A9A94;
+  --hairline:#E2E1DC;
+  --red:#C0392B;
+  --white:#FFFFFF;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Archivo',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--ink);text-decoration:none}
+input,select,textarea,button{font-family:inherit}
+::selection{background:var(--ink);color:var(--paper)}
+.mono{font-family:'JetBrains Mono',monospace}
+.container{max-width:1200px;margin:0 auto;padding:96px 40px}
+section{scroll-margin-top:64px}
+.section-rule{border-bottom:1px solid var(--hairline)}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;font-weight:600;color:var(--faint);text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);border:none;border-radius:4px;cursor:pointer;transition:background .2s ease}
+.btn:hover{background:var(--red);color:var(--paper)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: #fff;
-      text-align: center;
-    }
+/* ---------- Nav ---------- */
+nav{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid transparent}
+nav.scrolled{border-bottom-color:var(--hairline)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:64px}
+.wordmark{font-weight:600;font-size:19px;letter-spacing:-0.03em;color:var(--ink);border-bottom:3px solid var(--ink);padding-bottom:2px}
+.wordmark:hover{color:var(--ink)}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-link{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--ink)}
+.nav-link:hover{color:var(--red)}
+.nav-cta{padding:11px 18px;min-height:44px}
 
-    main {
-      padding: 2rem;
-    }
+/* ---------- Hero ---------- */
+.hero-grid{display:grid;grid-template-columns:1fr 400px;gap:64px;padding:88px 40px 80px;max-width:1200px;margin:0 auto;align-items:start}
+.hero-eyebrow{margin-bottom:26px}
+h1{margin:0 0 22px;font-size:clamp(30px,5vw,58px);font-weight:700;letter-spacing:-0.02em;line-height:1.12;color:var(--ink);max-width:14em;text-wrap:pretty}
+.accent{color:var(--red)}
+.hero-sub{margin:0 0 28px;font-size:18px;line-height:1.65;color:var(--grey);max-width:34em}
+.hero-lines{display:flex;flex-direction:column;gap:8px;margin-bottom:34px;font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--grey)}
+.hero-lines .slash{color:var(--red)}
+.hero-cta-row{display:flex;align-items:center;gap:22px}
+.hero-cta{padding:14px 22px}
+.tel-inline{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--ink);text-decoration:underline}
+.tel-inline:hover{color:var(--red)}
+.tel-inline--mobile{display:none}
+.hero-photo{width:400px;height:500px;border:1.5px solid var(--ink);border-radius:4px;background:repeating-linear-gradient(45deg,var(--white),var(--white) 10px,#EFEEE9 10px,#EFEEE9 11.5px);display:flex;align-items:center;justify-content:center}
+.slot-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--faint);text-align:center;line-height:1.8}
 
-    h1 {
-      font-size: clamp(2.5rem, 8vw, 5rem);
-      margin-bottom: 1rem;
-    }
+/* ---------- Services ---------- */
+.section-head h2{margin:0 0 10px;font-size:26px;font-weight:600;letter-spacing:-0.01em;color:var(--ink);max-width:30em;text-wrap:pretty}
+.section-head .eyebrow{margin-bottom:18px}
+.services-mono-line{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--grey);margin-bottom:44px}
+.spine{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.spine-label{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:var(--faint);white-space:nowrap}
+.spine-rule{flex:1;height:1px;background:var(--ink);position:relative}
+.spine-rule::after{content:"";position:absolute;right:-1px;top:-3.5px;width:8px;height:8px;border-top:1px solid var(--ink);border-right:1px solid var(--ink);transform:rotate(45deg)}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.service-card{background:var(--white);border:1.5px solid var(--ink);border-radius:4px;padding:24px 22px;display:flex;flex-direction:column;gap:12px}
+.service-index{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--faint)}
+.service-name{font-size:20px;font-weight:600;color:var(--ink)}
+.service-benefit{margin:0;font-size:14px;line-height:1.6;color:var(--grey);flex:1}
+.service-bullets{display:flex;flex-direction:column;gap:5px;font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1.5;color:var(--grey)}
+.service-engagement{border-top:1px solid var(--hairline);padding-top:12px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:var(--faint)}
 
-    p {
-      font-size: 1.25rem;
-      opacity: 0.85;
-    }
-  </style>
+/* ---------- Pull quote ---------- */
+.pullquote{display:grid;grid-template-columns:56px 1fr;gap:36px;align-items:start}
+.pullquote-glyph{font-size:84px;font-weight:700;color:var(--red);line-height:.8}
+.pullquote-text{font-size:27px;font-weight:500;line-height:1.45;color:var(--ink);max-width:30em;margin:0 0 28px;text-wrap:pretty}
+.pullquote-attrib{display:flex;align-items:center;gap:16px}
+.attrib-photo{width:56px;height:56px;flex:none;border:1.5px solid var(--ink);border-radius:4px;background:repeating-linear-gradient(45deg,var(--white),var(--white) 6px,#EFEEE9 6px,#EFEEE9 7px);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--faint)}
+.attrib-name{font-weight:600;font-size:15px;color:var(--ink)}
+.attrib-meta{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--faint);margin-top:3px}
+
+/* ---------- People ---------- */
+.people-grid{display:grid;grid-template-columns:460px 1fr;gap:64px;align-items:start}
+.people-eyebrow{margin-bottom:40px}
+.portraits{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.portrait-slot{aspect-ratio:4/5;border:1.5px solid var(--ink);border-radius:4px;background:repeating-linear-gradient(45deg,var(--white),var(--white) 8px,#EFEEE9 8px,#EFEEE9 9.5px);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.portrait-slot--optional{border:1px dashed var(--faint);background:none}
+.portrait-name{font-weight:600;font-size:16px;color:var(--ink)}
+.portrait-name--faint{color:var(--faint)}
+.portrait-role{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:var(--faint);margin-top:4px}
+.story-flag{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:var(--red);margin-bottom:20px}
+.story p{margin:0 0 14px;font-size:16px;line-height:1.65;color:var(--grey)}
+.story p.lead{color:var(--ink)}
+.story p:last-of-type{margin-bottom:28px}
+.credentials{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;color:var(--faint);border-top:1px solid var(--hairline);padding-top:18px}
+
+/* ---------- Clients ---------- */
+.clients-intro{font-size:19px;font-weight:500;color:var(--ink);margin-bottom:40px;max-width:36em}
+.clients-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.t-card{background:var(--white);border:1.5px solid var(--ink);border-radius:4px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
+.t-photo{background:repeating-linear-gradient(45deg,var(--white),var(--white) 8px,#EFEEE9 8px,#EFEEE9 9.5px);border-right:1px solid var(--hairline);display:flex;align-items:center;justify-content:center;min-height:360px}
+.t-body{padding:26px;display:flex;flex-direction:column;gap:14px}
+.t-callout{font-size:19px;font-weight:700;color:var(--ink);line-height:1.3}
+.t-quote{margin:0;font-size:15px;line-height:1.6;color:var(--grey);flex:1}
+.t-highlight{font-weight:600;color:var(--ink);text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px}
+.t-name{font-weight:600;font-size:15px;color:var(--ink)}
+.t-role{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint);margin-top:3px}
+.t-meta{border-top:1px solid var(--hairline);padding-top:12px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:var(--faint)}
+
+/* ---------- Contact ---------- */
+.contact-container{padding-bottom:104px}
+.contact-eyebrow{margin-bottom:40px}
+.contact-grid{display:grid;grid-template-columns:1fr 480px;gap:64px;align-items:start}
+.preferred{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;font-weight:600;color:var(--red);margin-bottom:18px}
+.contact-grid h2{margin:0 0 20px;font-size:38px;font-weight:700;letter-spacing:-0.02em;color:var(--ink)}
+.tel-big{display:inline-block;font-size:34px;font-weight:600;letter-spacing:-0.01em;color:var(--ink);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px;margin-bottom:24px}
+.tel-big:hover{color:var(--red)}
+.tel-btn-mobile{display:none}
+.contact-note{margin:0 0 22px;font-size:16px;line-height:1.65;color:var(--grey);max-width:28em}
+.availability{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;color:var(--faint)}
+.form-card{background:var(--white);border:1.5px solid var(--ink);border-radius:4px;padding:32px}
+.form-card form{display:flex;flex-direction:column;gap:18px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:block}
+.field-label{display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:var(--faint);margin-bottom:7px;text-transform:uppercase}
+.field input,.field select{width:100%;border:1px solid var(--hairline);border-radius:4px;height:42px;padding:0 12px;font-size:14.5px;color:var(--ink);background:var(--white);outline:none}
+.field select{padding:0 10px}
+.field textarea{width:100%;border:1px solid var(--hairline);border-radius:4px;padding:10px 12px;font-size:14.5px;color:var(--ink);background:var(--white);outline:none;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{border:1.5px solid var(--ink)}
+.field.invalid input,.field.invalid select{border:1.5px solid var(--red)}
+.field-error{display:none;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;color:var(--red);margin-top:6px}
+.field.invalid .field-error{display:block}
+.form-actions{display:flex;align-items:center;gap:18px}
+.submit-btn{padding:13px 24px;min-height:44px}
+.submit-btn:disabled{opacity:.55;cursor:default}
+.submit-btn:disabled:hover{background:var(--ink)}
+.form-booster{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:var(--faint)}
+.consent{font-size:11px;color:var(--grey)}
+.consent a{text-decoration:underline;color:var(--grey)}
+.form-success{display:none;flex-direction:column;gap:14px;padding:24px 0;text-align:center}
+.form-card.sent form{display:none}
+.form-card.sent .form-success{display:flex}
+.success-flag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;font-weight:600;color:var(--red)}
+.success-head{font-size:26px;font-weight:700;color:var(--ink)}
+.form-success p{margin:0;font-size:15.5px;line-height:1.65;color:var(--grey)}
+.form-success a{text-decoration:underline;font-weight:600}
+
+/* ---------- Footer ---------- */
+footer{border-top:2px solid var(--ink)}
+.footer-inner{max-width:1200px;margin:0 auto;padding:26px 40px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:var(--grey)}
+.footer-wordmark{font-family:'Archivo',sans-serif;font-weight:600;font-size:15px;letter-spacing:-0.03em;color:var(--ink);border-bottom:2px solid var(--ink)}
+.footer-inner a{color:var(--grey)}
+.footer-inner a:hover{color:var(--red)}
+
+/* ---------- Mobile (<900px), per approved option 4b ---------- */
+@media (max-width:900px){
+  section{scroll-margin-top:60px}
+  .container{padding:52px 20px}
+  .nav-inner{padding:0 20px;height:60px}
+  .wordmark{font-size:18px}
+  .nav-link{display:none}
+  .nav-cta{font-size:11px;padding:13px 16px;white-space:nowrap}
+  .hero-grid{grid-template-columns:1fr;gap:0;padding:52px 20px 44px}
+  .hero-eyebrow{font-size:10px;letter-spacing:.2em;line-height:1.7;margin-bottom:20px}
+  h1{font-size:34px;line-height:1.14;margin-bottom:16px}
+  .hero-sub{font-size:16px;line-height:1.6;margin-bottom:22px}
+  .hero-lines{font-size:11.5px;line-height:1.5;gap:9px;margin-bottom:26px}
+  .hero-cta-row{flex-direction:column;align-items:stretch;gap:10px}
+  .hero-cta{width:100%;padding:15px 0;text-align:center}
+  .tel-inline--desktop{display:none}
+  .tel-inline--mobile{display:block;text-align:center;padding:10px 0}
+  .hero-photo{display:none}
+  .section-head h2{font-size:21px;line-height:1.35}
+  .services-mono-line{font-size:10.5px;letter-spacing:.12em;line-height:1.7;margin-bottom:28px}
+  .spine{gap:10px;margin-bottom:18px}
+  .spine-label{font-size:9.5px;letter-spacing:.14em}
+  .services-grid{grid-template-columns:1fr;gap:14px}
+  .service-card{padding:22px 22px;gap:10px}
+  .service-name{font-size:19px}
+  .service-engagement{padding-top:10px;font-size:10px;letter-spacing:.12em}
+  .pullquote{grid-template-columns:1fr;gap:14px}
+  .pullquote-glyph{font-size:40px}
+  .pullquote-text{font-size:20px;line-height:1.5;margin-bottom:22px}
+  .pullquote-attrib{gap:14px}
+  .attrib-photo{width:48px;height:48px;font-size:8px}
+  .attrib-name{font-size:14px}
+  .attrib-meta{font-size:10px;letter-spacing:.08em}
+  .people-grid{grid-template-columns:1fr;gap:24px}
+  .people-eyebrow{margin-bottom:24px}
+  .portraits{grid-template-columns:1fr;gap:0}
+  .portrait--primary .portrait-slot{width:240px;margin-bottom:12px}
+  .portrait--optional{display:none}
+  .story-flag{margin-top:12px}
+  .story p{font-size:15px}
+  .credentials{font-size:10px;letter-spacing:.16em;padding-top:14px}
+  .clients-intro{font-size:16px;line-height:1.5;margin-bottom:24px}
+  .clients-grid{grid-template-columns:1fr;gap:14px}
+  .t-card{display:block}
+  .t-photo{min-height:240px;height:240px;border-right:none;border-bottom:1px solid var(--hairline)}
+  .t-body{padding:20px;gap:12px}
+  .t-callout{font-size:17px}
+  .t-quote{font-size:14px}
+  .t-name{font-size:14px}
+  .t-role{font-size:10px;margin-top:2px}
+  .t-meta{padding-top:10px;font-size:9.5px;letter-spacing:.1em}
+  .contact-container{padding-bottom:60px}
+  .contact-eyebrow{margin-bottom:24px}
+  .contact-grid{grid-template-columns:1fr;gap:36px}
+  .preferred{font-size:10px;letter-spacing:.2em;margin-bottom:12px}
+  .contact-grid h2{font-size:28px;margin-bottom:14px}
+  .tel-big{display:none}
+  .tel-btn-mobile{display:flex;width:100%;font-size:13px;letter-spacing:.08em;padding:16px 0;margin-bottom:16px}
+  .contact-note{font-size:14.5px;line-height:1.6;margin-bottom:14px}
+  .form-card{padding:24px 20px}
+  .field-row{grid-template-columns:1fr;gap:16px}
+  .field input,.field select{height:44px}
+  .form-actions{flex-direction:column;align-items:stretch;gap:12px}
+  .submit-btn{width:100%;padding:15px 0}
+  .form-booster{text-align:center;font-size:9.5px;letter-spacing:.12em}
+  .consent{text-align:center}
+  .footer-inner{padding:22px 20px;gap:8px 16px;font-size:10px;letter-spacing:.12em}
+  .footer-wordmark{font-size:14px}
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+}
+</style>
 </head>
 <body>
-  <main>
-    <h1>Hello, Will! 👋</h1>
-    <p>Your new website is up and running.</p>
-  </main>
+
+<nav id="nav" aria-label="Main">
+  <div class="nav-inner">
+    <a href="#top" class="wordmark">Nausta</a>
+    <div class="nav-links">
+      <a href="#services" class="nav-link">SERVICES</a>
+      <a href="#people" class="nav-link">PEOPLE</a>
+      <a href="#clients" class="nav-link">CLIENTS</a>
+      <a href="#contact" class="btn nav-cta">GET IN TOUCH <span aria-hidden="true">&nbsp;→</span></a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="section-rule" aria-label="Introduction">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow hero-eyebrow" data-anim="0">For funded startups and profitable private companies</p>
+        <h1 data-anim="90">Finance, accounting and counsel for companies that intend to <span class="accent">last</span>.</h1>
+        <p class="hero-sub" data-anim="180">We handle everything from the monthly bookkeeping to the day someone offers to buy you, and you deal with the person doing the work, not an account manager.</p>
+        <div class="hero-lines" data-anim="270">
+          <div><span class="slash">//</span> Bookkeeping and management accounts through to tax, forecasting and deals.</div>
+          <div><span class="slash">//</span> One named partner across all of it. You always get them on the phone.</div>
+          <div><span class="slash">//</span> Fixed fees. No surprises on either side of the ledger.</div>
+        </div>
+        <div class="hero-cta-row" data-anim="360">
+          <a href="#contact" class="btn hero-cta">BOOK A FIRST CONVERSATION <span aria-hidden="true">&nbsp;→</span></a>
+          <a href="tel:+447000000000" class="tel-inline tel-inline--desktop">+44 7XXX XXX XXX</a>
+          <a href="tel:+447000000000" class="tel-inline tel-inline--mobile">OR CALL +44 7XXX XXX XXX</a>
+        </div>
+      </div>
+      <div class="hero-photo" data-anim="240" role="img" aria-label="Placeholder for hero photograph: founder at desk, 4:5 ratio, warm desaturated treatment">
+        <span class="slot-label">HERO PHOTOGRAPH 4:5<br>FOUNDER AT DESK<br>WARM DESATURATED</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section-rule" aria-label="Services">
+    <div class="container">
+      <div class="section-head" data-anim="0">
+        <p class="eyebrow">01 · Services</p>
+        <h2>Four services that are really one job. We pick your business up at the bookkeeping and stay with it through to the sale.</h2>
+        <div class="services-mono-line">THE SAME TEAM ACROSS ALL FOUR. YOU NEVER GET HANDED ON.</div>
+      </div>
+      <div class="spine" data-anim="80" aria-hidden="true">
+        <span class="spine-label">DAY TO DAY</span>
+        <div class="spine-rule"></div>
+        <span class="spine-label">ONCE IN A LIFETIME</span>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" data-anim="0">
+          <div class="service-index">01</div>
+          <div class="service-name">Accountancy</div>
+          <p class="service-benefit">Numbers you get in time to use, in language you can act on.</p>
+          <div class="service-bullets">
+            <span>· Monthly management accounts</span>
+            <span>· Year-end statutory accounts and filing</span>
+            <span>· Bookkeeping and payroll</span>
+            <span>· VAT returns and filing</span>
+            <span>· Xero, QuickBooks and FreeAgent setup</span>
+          </div>
+          <div class="service-engagement">MONTHLY RETAINER</div>
+        </div>
+        <div class="service-card" data-anim="90">
+          <div class="service-index">02</div>
+          <div class="service-name">Tax</div>
+          <p class="service-benefit">Tax planned forward, so the bill is a decision rather than a shock.</p>
+          <div class="service-bullets">
+            <span>· Corporation tax and self assessment</span>
+            <span>· R&amp;D tax relief claims</span>
+            <span>· EIS and SEIS advance assurance</span>
+            <span>· Share schemes and EMI options</span>
+            <span>· Remuneration and dividend planning</span>
+          </div>
+          <div class="service-engagement">RETAINER OR PROJECT FEE</div>
+        </div>
+        <div class="service-card" data-anim="180">
+          <div class="service-index">03</div>
+          <div class="service-name">Fractional CFO / FD</div>
+          <p class="service-benefit">A finance director in the room for the decisions that matter, without the salary.</p>
+          <div class="service-bullets">
+            <span>· Board reporting and board attendance</span>
+            <span>· Cash flow forecasting and scenarios</span>
+            <span>· Budgeting and financial planning</span>
+            <span>· Pricing and margin analysis</span>
+            <span>· Fundraise readiness and reporting</span>
+          </div>
+          <div class="service-engagement">MONTHLY, FROM ONE DAY A MONTH</div>
+        </div>
+        <div class="service-card" data-anim="270">
+          <div class="service-index">04</div>
+          <div class="service-name">Deal advisory</div>
+          <p class="service-benefit">The person who knows your numbers is the person in the room when you sell.</p>
+          <div class="service-bullets">
+            <span>· Financial due diligence, both sides</span>
+            <span>· Business valuation</span>
+            <span>· Exit and succession planning</span>
+            <span>· Acquisition support and integration</span>
+            <span>· Data room preparation</span>
+          </div>
+          <div class="service-engagement">PROJECT FEE</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PULL QUOTE -->
+  <section class="section-rule" aria-label="Client quote">
+    <div class="container">
+      <figure class="pullquote" data-anim="0" style="margin:0">
+        <div class="pullquote-glyph" aria-hidden="true">&ldquo;</div>
+        <div>
+          <blockquote class="pullquote-text" style="margin:0 0 28px">When we went into diligence I expected to be handed to a corporate finance firm who would spend six weeks learning our numbers. Will had been in those numbers for three years. <span class="accent">The price we shook hands on was higher than the one we started with.</span></blockquote>
+          <figcaption class="pullquote-attrib">
+            <div class="attrib-photo" role="img" aria-label="Placeholder for attribution photograph">PHOTO</div>
+            <div>
+              <div class="attrib-name">[Name]</div>
+              <div class="attrib-meta">FORMER OWNER, [COMPANY] · MANUFACTURING · EXITED 2025</div>
+            </div>
+          </figcaption>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- PEOPLE -->
+  <section id="people" class="section-rule" aria-label="About the people">
+    <div class="container">
+      <p class="eyebrow people-eyebrow" data-anim="0">02 · People</p>
+      <div class="people-grid">
+        <div class="portraits" data-anim="80">
+          <div class="portrait--primary">
+            <div class="portrait-slot" role="img" aria-label="Placeholder for founder portrait, 4:5 ratio, minimum 1200 by 1500 pixels">
+              <span class="slot-label" style="font-size:10px;letter-spacing:.12em">PORTRAIT 4:5<br>MIN 1200×1500</span>
+            </div>
+            <div class="portrait-name">Will [Surname]</div>
+            <div class="portrait-role">FOUNDER · ACA / GCMA</div>
+          </div>
+          <div class="portrait--optional">
+            <div class="portrait-slot portrait-slot--optional" role="img" aria-label="Optional placeholder for co-founder portrait">
+              <span class="slot-label" style="font-size:10px;letter-spacing:.12em">OPTIONAL<br>CO-FOUNDER<br>PORTRAIT</span>
+            </div>
+            <div class="portrait-name portrait-name--faint">[Name]</div>
+            <div class="portrait-role">[ROLE] · [QUALIFICATION]</div>
+          </div>
+        </div>
+        <div class="story" data-anim="160">
+          <div class="story-flag">[PLACEHOLDER: TO BE REPLACED WITH WILL'S OWN WORDS]</div>
+          <p class="lead">I spent [X] years in [firm / industry], most of it watching good businesses make expensive decisions with incomplete information.</p>
+          <p>The pattern was always the same. The accounts were technically correct and commercially useless. They arrived late, they were written for HMRC rather than for the person running the company, and nobody ever sat down and explained what they meant.</p>
+          <p>Meanwhile the work I found most useful, the forecasting, the board conversations, the deal, was priced as a luxury that only companies with a full-time finance director could reach.</p>
+          <p>I started Nausta to put those two things in one place. Proper compliance done on time, and the commercial advice that should always have come with it, for a fee agreed in advance.</p>
+          <p>We are deliberately small. I take on a limited number of clients because I do the work myself. If we speak and I am not the right fit, I will tell you and point you at someone who is.</p>
+          <div class="credentials">ACA / GCMA QUALIFIED · [YEARS] YEARS · PREVIOUSLY [FIRM]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTS -->
+  <section id="clients" class="section-rule" aria-label="Client testimonials">
+    <div class="container">
+      <div data-anim="0">
+        <p class="eyebrow" style="margin-bottom:18px">03 · Clients</p>
+        <div class="clients-intro">We have no third-party reviews yet. What we have is clients who agreed to say this on the record.</div>
+      </div>
+      <div class="clients-grid">
+        <div class="t-card" data-anim="0">
+          <div class="t-photo" role="img" aria-label="Placeholder for client photograph, minimum 800 by 1000 pixels"><span class="slot-label" style="font-size:10px;letter-spacing:.12em">CLIENT PHOTO<br>MIN 800×1000</span></div>
+          <div class="t-body">
+            <div class="t-callout">Our management accounts now land on the 6th, every month</div>
+            <p class="t-quote">"Will has our numbers with us by the sixth working day. <span class="t-highlight">We have made two hires off the back of numbers we could actually trust.</span>"</p>
+            <div>
+              <div class="t-name">[Name]</div>
+              <div class="t-role">MANAGING DIRECTOR, [COMPANY]</div>
+            </div>
+            <div class="t-meta">E-COMMERCE · ACCOUNTANCY + TAX · CLIENT SINCE 2024</div>
+          </div>
+        </div>
+        <div class="t-card" data-anim="90">
+          <div class="t-photo" role="img" aria-label="Placeholder for client photograph, minimum 800 by 1000 pixels"><span class="slot-label" style="font-size:10px;letter-spacing:.12em">CLIENT PHOTO<br>MIN 800×1000</span></div>
+          <div class="t-body">
+            <div class="t-callout">A finance director for two days a month</div>
+            <p class="t-quote">"Two days a month gets me the board pack, the forecast and someone to argue with about pricing. <span class="t-highlight">It costs less than a fifth of the hire I thought I needed.</span>"</p>
+            <div>
+              <div class="t-name">[Name]</div>
+              <div class="t-role">FOUNDER, [COMPANY]</div>
+            </div>
+            <div class="t-meta">B2B SERVICES · FRACTIONAL CFO · CLIENT SINCE 2023</div>
+          </div>
+        </div>
+        <div class="t-card" data-anim="0">
+          <div class="t-photo" role="img" aria-label="Placeholder for client photograph, minimum 800 by 1000 pixels"><span class="slot-label" style="font-size:10px;letter-spacing:.12em">CLIENT PHOTO<br>MIN 800×1000</span></div>
+          <div class="t-body">
+            <div class="t-callout">I have his mobile number and I use it</div>
+            <p class="t-quote">"<span class="t-highlight">With Will I ring the man who actually does the work and he picks up.</span> The fee was agreed on one page before we started."</p>
+            <div>
+              <div class="t-name">[Name]</div>
+              <div class="t-role">DIRECTOR, [COMPANY]</div>
+            </div>
+            <div class="t-meta">PROFESSIONAL SERVICES · ACCOUNTANCY + TAX · CLIENT SINCE 2024</div>
+          </div>
+        </div>
+        <div class="t-card" data-anim="90">
+          <div class="t-photo" role="img" aria-label="Placeholder for client photograph, minimum 800 by 1000 pixels"><span class="slot-label" style="font-size:10px;letter-spacing:.12em">CLIENT PHOTO<br>MIN 800×1000</span></div>
+          <div class="t-body">
+            <div class="t-callout">He got our SEIS assurance through in nine days</div>
+            <p class="t-quote">"Will turned the advance assurance around in nine days. <span class="t-highlight">He has been through a raise before, and it shows.</span>"</p>
+            <div>
+              <div class="t-name">[Name]</div>
+              <div class="t-role">CO-FOUNDER, [COMPANY]</div>
+            </div>
+            <div class="t-meta">SAAS · TAX + FRACTIONAL CFO · CLIENT SINCE 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" aria-label="Get in touch">
+    <div class="container contact-container">
+      <p class="eyebrow contact-eyebrow" data-anim="0">04 · Get in touch</p>
+      <div class="contact-grid">
+        <div data-anim="80">
+          <div class="preferred">PREFERRED</div>
+          <h2>Call Will directly</h2>
+          <a href="tel:+447000000000" class="tel-big">+44 7XXX XXX XXX</a>
+          <a href="tel:+447000000000" class="btn tel-btn-mobile">CALL +44 7XXX XXX XXX <span aria-hidden="true">&nbsp;→</span></a>
+          <p class="contact-note">This is Will's mobile. You get the person who would do your work, not a switchboard. If I am with a client I will call you back the same day.</p>
+          <div class="availability">MON TO FRI · 08:00 TO 18:00</div>
+        </div>
+        <div class="form-card" data-anim="160" id="form-card">
+          <!-- TODO: replace action with the real form endpoint once the domain
+               and mailbox are live. Target inbox: hello@nausta.co.uk (TBC) -->
+          <form action="#" method="POST" data-endpoint="PLACEHOLDER" id="contact-form" novalidate>
+            <div class="field-row">
+              <label class="field" id="f-name">
+                <span class="field-label">Name *</span>
+                <input required type="text" name="name" autocomplete="name">
+                <span class="field-error" role="alert">PLEASE ENTER YOUR NAME</span>
+              </label>
+              <label class="field" id="f-email">
+                <span class="field-label">Email *</span>
+                <input required type="email" name="email" autocomplete="email">
+                <span class="field-error" role="alert">PLEASE ENTER A VALID EMAIL</span>
+              </label>
+            </div>
+            <div class="field-row">
+              <label class="field">
+                <span class="field-label">Phone</span>
+                <input type="tel" name="phone" autocomplete="tel">
+              </label>
+              <label class="field">
+                <span class="field-label">Company</span>
+                <input type="text" name="company" autocomplete="organization">
+              </label>
+            </div>
+            <label class="field" id="f-need">
+              <span class="field-label">What do you need help with *</span>
+              <select required name="need">
+                <option value="">Select…</option>
+                <option>Accountancy</option>
+                <option>Tax</option>
+                <option>Fractional CFO or FD</option>
+                <option>Deal advisory</option>
+                <option>Not sure yet</option>
+              </select>
+              <span class="field-error" role="alert">PLEASE CHOOSE AN OPTION</span>
+            </label>
+            <label class="field">
+              <span class="field-label">Anything else we should know</span>
+              <textarea name="notes" rows="4"></textarea>
+            </label>
+            <div class="form-actions">
+              <button type="submit" class="btn submit-btn" id="submit-btn">SEND <span aria-hidden="true">&nbsp;→</span></button>
+              <span class="form-booster">WE REPLY WITHIN ONE WORKING DAY.</span>
+            </div>
+            <div class="consent">We will only use your details to reply to this enquiry. <a href="#">Privacy policy</a></div>
+          </form>
+          <div class="form-success" role="status">
+            <div class="success-flag">RECEIVED</div>
+            <div class="success-head">Thank you.</div>
+            <p>We reply within one working day. If it is quicker, call Will on <a href="tel:+447000000000">+44 7XXX XXX XXX</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-wordmark">Nausta</span>
+    <span>LONDON</span>
+    <span>EST. 2026</span>
+    <span>REG. NO. [XXXXXXXX]</span>
+    <span>ACA / GCMA REGISTERED</span>
+    <a href="tel:+447000000000">+44 7XXX XXX XXX</a>
+    <span>HELLO@NAUSTA.CO.UK</span>
+    <a href="#">PRIVACY</a>
+    <span>© 2026</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* State lives in JS variables only; no browser storage APIs are used. */
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Nav bottom border after ~40px of scroll */
+  var nav = document.getElementById('nav');
+  var onScroll = function () {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* Entrance animation: fade-and-rise, once per element.
+     Hidden state is applied here, after load, so no-JS users see the full page. */
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    var els = Array.prototype.slice.call(document.querySelectorAll('[data-anim]'));
+    els.forEach(function (el) {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(14px)';
+      el.style.transition = 'opacity .3s ease-out, transform .3s ease-out';
+      el.style.willChange = 'opacity, transform';
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          var delay = parseInt(el.getAttribute('data-anim') || '0', 10);
+          setTimeout(function () {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+            el.style.willChange = 'auto';
+          }, delay);
+          io.unobserve(el);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  }
+
+  /* Contact form: validate, submit to placeholder endpoint, success state.
+     Typed content is never lost; the form is hidden, not removed. */
+  var form = document.getElementById('contact-form');
+  var card = document.getElementById('form-card');
+  var submitBtn = document.getElementById('submit-btn');
+  var submitting = false;
+
+  var validators = [
+    {
+      wrap: document.getElementById('f-name'),
+      input: form.elements.name,
+      valid: function (v) { return v.trim().length > 0; }
+    },
+    {
+      wrap: document.getElementById('f-email'),
+      input: form.elements.email,
+      valid: function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); }
+    },
+    {
+      wrap: document.getElementById('f-need'),
+      input: form.elements.need,
+      valid: function (v) { return v !== ''; }
+    }
+  ];
+
+  validators.forEach(function (f) {
+    f.input.addEventListener('input', function () {
+      f.wrap.classList.remove('invalid');
+      f.input.removeAttribute('aria-invalid');
+    });
+    f.input.addEventListener('change', function () {
+      f.wrap.classList.remove('invalid');
+      f.input.removeAttribute('aria-invalid');
+    });
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (submitting) return;
+
+    var firstInvalid = null;
+    validators.forEach(function (f) {
+      if (!f.valid(f.input.value)) {
+        f.wrap.classList.add('invalid');
+        f.input.setAttribute('aria-invalid', 'true');
+        if (!firstInvalid) firstInvalid = f.input;
+      }
+    });
+    if (firstInvalid) {
+      firstInvalid.focus();
+      return;
+    }
+
+    submitting = true;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'SENDING…';
+
+    /* Placeholder endpoint: no real network call is made. When the real
+       endpoint exists, POST the FormData here and only show the success
+       state on a 2xx response, keeping the form intact on failure. */
+    setTimeout(function () {
+      card.classList.add('sent');
+      submitting = false;
+    }, 700);
+  });
+})();
+</script>
+
 </body>
 </html>
