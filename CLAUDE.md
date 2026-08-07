@@ -11,8 +11,9 @@ Every feature request from the user MUST follow this process:
 
 ## Deployment rules
 
-- **NEVER deploy to a live website without the user's explicit permission in the current conversation.** Merging to `main` is allowed as part of the normal workflow; deploying is not. Permission is per-deploy — one approval does not cover future deploys.
-- No live deployment target is configured yet. When the user first asks to deploy, agree on a hosting target with them before proceeding.
+- **NEVER deploy to a live website without the user's explicit permission in the current conversation.** Merging to `main` locally is allowed as part of the normal workflow; deploying is not. Permission is per-deploy — one approval does not cover future deploys.
+- **Hosting**: GitHub Pages, serving the root of `main` from https://github.com/methodik/will-website. Live URL: https://methodik.github.io/will-website/
+- **Pushing `main` to GitHub IS the deploy** — Pages republishes automatically on every push to `main`. Therefore: merge features into local `main` freely, but do NOT `git push` main until the user explicitly approves a deploy. Feature branches may be pushed to GitHub at any time (they don't publish anything).
 
 ## Release logging (Notion)
 
