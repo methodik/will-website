@@ -119,9 +119,7 @@ h1{margin:0 0 22px;font-size:clamp(30px,5vw,58px);font-weight:700;letter-spacing
 .people-eyebrow{margin-bottom:40px}
 .portraits{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .portrait-slot{aspect-ratio:4/5;border:1.5px solid var(--ink);border-radius:4px;background:repeating-linear-gradient(45deg,var(--white),var(--white) 8px,#EFEEE9 8px,#EFEEE9 9.5px);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
-.portrait-slot--optional{border:1px dashed var(--faint);background:none}
 .portrait-name{font-weight:600;font-size:16px;color:var(--ink)}
-.portrait-name--faint{color:var(--faint)}
 .portrait-role{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:var(--faint);margin-top:4px}
 .story-flag{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:var(--red);margin-bottom:20px}
 .story p{margin:0 0 14px;font-size:16px;line-height:1.65;color:var(--grey)}
@@ -222,9 +220,10 @@ footer{border-top:2px solid var(--ink)}
   .attrib-meta{font-size:10px;letter-spacing:.08em}
   .people-grid{grid-template-columns:1fr;gap:24px}
   .people-eyebrow{margin-bottom:24px}
-  .portraits{grid-template-columns:1fr;gap:0}
-  .portrait--primary .portrait-slot{width:240px;margin-bottom:12px}
-  .portrait--optional{display:none}
+  .portraits{grid-template-columns:1fr 1fr;gap:14px}
+  .portrait-slot{margin-bottom:12px}
+  .portrait-name{font-size:14px}
+  .portrait-role{font-size:9.5px;letter-spacing:.1em}
   .story-flag{margin-top:12px}
   .story p{font-size:15px}
   .credentials{font-size:10px;letter-spacing:.16em;padding-top:14px}
@@ -378,7 +377,7 @@ footer{border-top:2px solid var(--ink)}
       <figure class="pullquote" data-anim="0" style="margin:0">
         <div class="pullquote-glyph" aria-hidden="true">&ldquo;</div>
         <div>
-          <blockquote class="pullquote-text" style="margin:0 0 28px">When we went into diligence I expected to be handed to a corporate finance firm who would spend six weeks learning our numbers. Will had been in those numbers for three years. <span class="accent">The price we shook hands on was higher than the one we started with.</span></blockquote>
+          <blockquote class="pullquote-text" style="margin:0 0 28px">When we went into diligence I expected to be handed to a corporate finance firm who would spend six weeks learning our numbers. Nausta had been in those numbers for three years. <span class="accent">The price we shook hands on was higher than the one we started with.</span></blockquote>
           <figcaption class="pullquote-attrib">
             <div class="attrib-photo" role="img" aria-label="Placeholder for attribution photograph">PHOTO</div>
             <div>
@@ -397,28 +396,28 @@ footer{border-top:2px solid var(--ink)}
       <p class="eyebrow people-eyebrow" data-anim="0">02 · People</p>
       <div class="people-grid">
         <div class="portraits" data-anim="80">
-          <div class="portrait--primary">
+          <div>
             <div class="portrait-slot" role="img" aria-label="Placeholder for founder portrait, 4:5 ratio, minimum 1200 by 1500 pixels">
               <span class="slot-label" style="font-size:10px;letter-spacing:.12em">PORTRAIT 4:5<br>MIN 1200×1500</span>
             </div>
-            <div class="portrait-name">Will [Surname]</div>
-            <div class="portrait-role">FOUNDER · ACA / GCMA</div>
+            <div class="portrait-name">[Founder One]</div>
+            <div class="portrait-role">FOUNDER · [QUALIFICATIONS]</div>
           </div>
-          <div class="portrait--optional">
-            <div class="portrait-slot portrait-slot--optional" role="img" aria-label="Optional placeholder for co-founder portrait">
-              <span class="slot-label" style="font-size:10px;letter-spacing:.12em">OPTIONAL<br>CO-FOUNDER<br>PORTRAIT</span>
+          <div>
+            <div class="portrait-slot" role="img" aria-label="Placeholder for founder portrait, 4:5 ratio, minimum 1200 by 1500 pixels">
+              <span class="slot-label" style="font-size:10px;letter-spacing:.12em">PORTRAIT 4:5<br>MIN 1200×1500</span>
             </div>
-            <div class="portrait-name portrait-name--faint">[Name]</div>
-            <div class="portrait-role">[ROLE] · [QUALIFICATION]</div>
+            <div class="portrait-name">[Founder Two]</div>
+            <div class="portrait-role">FOUNDER · [QUALIFICATIONS]</div>
           </div>
         </div>
         <div class="story" data-anim="160">
-          <div class="story-flag">[PLACEHOLDER: TO BE REPLACED WITH WILL'S OWN WORDS]</div>
-          <p class="lead">I spent [X] years in [firm / industry], most of it watching good businesses make expensive decisions with incomplete information.</p>
+          <div class="story-flag">[PLACEHOLDER: TO BE REPLACED WITH THE FOUNDERS' OWN WORDS]</div>
+          <p class="lead">We spent [X] years in [firm / industry], most of it watching good businesses make expensive decisions with incomplete information.</p>
           <p>The pattern was always the same. The accounts were technically correct and commercially useless. They arrived late, they were written for HMRC rather than for the person running the company, and nobody ever sat down and explained what they meant.</p>
-          <p>Meanwhile the work I found most useful, the forecasting, the board conversations, the deal, was priced as a luxury that only companies with a full-time finance director could reach.</p>
-          <p>I started Nausta to put those two things in one place. Proper compliance done on time, and the commercial advice that should always have come with it, for a fee agreed in advance.</p>
-          <p>We are deliberately small. I take on a limited number of clients because I do the work myself. If we speak and I am not the right fit, I will tell you and point you at someone who is.</p>
+          <p>Meanwhile the work we found most useful, the forecasting, the board conversations, the deal, was priced as a luxury that only companies with a full-time finance director could reach.</p>
+          <p>We started Nausta to put those two things in one place. Proper compliance done on time, and the commercial advice that should always have come with it, for a fee agreed in advance.</p>
+          <p>We are deliberately small. We take on a limited number of clients because we do the work ourselves. If we speak and we are not the right fit, we will tell you and point you at someone who is.</p>
           <div class="credentials">ACA / GCMA QUALIFIED · [YEARS] YEARS · PREVIOUSLY [FIRM]</div>
         </div>
       </div>
@@ -437,7 +436,7 @@ footer{border-top:2px solid var(--ink)}
           <div class="t-photo" role="img" aria-label="Placeholder for client photograph, minimum 800 by 1000 pixels"><span class="slot-label" style="font-size:10px;letter-spacing:.12em">CLIENT PHOTO<br>MIN 800×1000</span></div>
           <div class="t-body">
             <div class="t-callout">Our management accounts now land on the 6th, every month</div>
-            <p class="t-quote">"Will has our numbers with us by the sixth working day. <span class="t-highlight">We have made two hires off the back of numbers we could actually trust.</span>"</p>
+            <p class="t-quote">"Nausta has our numbers with us by the sixth working day. <span class="t-highlight">We have made two hires off the back of numbers we could actually trust.</span>"</p>
             <div>
               <div class="t-name">[Name]</div>
               <div class="t-role">MANAGING DIRECTOR, [COMPANY]</div>
@@ -460,8 +459,8 @@ footer{border-top:2px solid var(--ink)}
         <div class="t-card" data-anim="0">
           <div class="t-photo" role="img" aria-label="Placeholder for client photograph, minimum 800 by 1000 pixels"><span class="slot-label" style="font-size:10px;letter-spacing:.12em">CLIENT PHOTO<br>MIN 800×1000</span></div>
           <div class="t-body">
-            <div class="t-callout">I have his mobile number and I use it</div>
-            <p class="t-quote">"<span class="t-highlight">With Will I ring the man who actually does the work and he picks up.</span> The fee was agreed on one page before we started."</p>
+            <div class="t-callout">I have their mobile number and I use it</div>
+            <p class="t-quote">"<span class="t-highlight">With Nausta I ring the person who actually does the work and they pick up.</span> The fee was agreed on one page before we started."</p>
             <div>
               <div class="t-name">[Name]</div>
               <div class="t-role">DIRECTOR, [COMPANY]</div>
@@ -472,8 +471,8 @@ footer{border-top:2px solid var(--ink)}
         <div class="t-card" data-anim="90">
           <div class="t-photo" role="img" aria-label="Placeholder for client photograph, minimum 800 by 1000 pixels"><span class="slot-label" style="font-size:10px;letter-spacing:.12em">CLIENT PHOTO<br>MIN 800×1000</span></div>
           <div class="t-body">
-            <div class="t-callout">He got our SEIS assurance through in nine days</div>
-            <p class="t-quote">"Will turned the advance assurance around in nine days. <span class="t-highlight">He has been through a raise before, and it shows.</span>"</p>
+            <div class="t-callout">They got our SEIS assurance through in nine days</div>
+            <p class="t-quote">"Nausta turned the advance assurance around in nine days. <span class="t-highlight">They have been through a raise before, and it shows.</span>"</p>
             <div>
               <div class="t-name">[Name]</div>
               <div class="t-role">CO-FOUNDER, [COMPANY]</div>
@@ -492,10 +491,10 @@ footer{border-top:2px solid var(--ink)}
       <div class="contact-grid">
         <div data-anim="80">
           <div class="preferred">PREFERRED</div>
-          <h2>Call Will directly</h2>
+          <h2>Call the team directly</h2>
           <a href="tel:+447000000000" class="tel-big">+44 7XXX XXX XXX</a>
           <a href="tel:+447000000000" class="btn tel-btn-mobile">CALL +44 7XXX XXX XXX <span aria-hidden="true">&nbsp;→</span></a>
-          <p class="contact-note">This is Will's mobile. You get the person who would do your work, not a switchboard. If I am with a client I will call you back the same day.</p>
+          <p class="contact-note">You get the person who would do your work, not a switchboard. If we are with a client we will call you back the same day.</p>
           <div class="availability">MON TO FRI · 08:00 TO 18:00</div>
         </div>
         <div class="form-card" data-anim="160" id="form-card">
@@ -549,7 +548,7 @@ footer{border-top:2px solid var(--ink)}
           <div class="form-success" role="status">
             <div class="success-flag">RECEIVED</div>
             <div class="success-head">Thank you.</div>
-            <p>We reply within one working day. If it is quicker, call Will on <a href="tel:+447000000000">+44 7XXX XXX XXX</a>.</p>
+            <p>We reply within one working day. If it is quicker, call us on <a href="tel:+447000000000">+44 7XXX XXX XXX</a>.</p>
           </div>
         </div>
       </div>
