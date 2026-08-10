@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <!-- TODO: replace with the real domain and a real OG image once they exist -->
 <meta property="og:url" content="https://methodik.github.io/will-website/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cline x1='10' y1='44' x2='50' y2='44' stroke='%23262220' stroke-width='1.3' opacity='0.4'/%3E%3Cpath d='M10 44 L26 34 L38 37 L50 16' stroke='%23262220' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='50' cy='16' r='4.6' fill='%23262220'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230A0A0A'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Archivo,sans-serif' font-weight='700' font-size='18' fill='%23F7F6F2'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -66,9 +66,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 nav{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid transparent}
 nav.scrolled{border-bottom-color:var(--hairline)}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:64px}
-.logo-link{display:flex;align-items:center}
-.logo{height:40px;width:auto;display:block}
-.logo text,.footer-logo text{font-family:'Archivo',system-ui,sans-serif}
+.wordmark{font-weight:600;font-size:19px;letter-spacing:-0.03em;color:var(--ink);border-bottom:3px solid var(--ink);padding-bottom:2px}
+.wordmark:hover{color:var(--ink)}
 .nav-links{display:flex;align-items:center;gap:28px}
 .nav-link{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--ink)}
 .nav-link:hover{color:var(--red)}
@@ -182,7 +181,7 @@ h1{margin:0 0 22px;font-size:clamp(30px,5vw,58px);font-weight:700;letter-spacing
 /* ---------- Footer ---------- */
 footer{border-top:2px solid var(--ink)}
 .footer-inner{max-width:1200px;margin:0 auto;padding:26px 40px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:var(--grey)}
-.footer-logo{height:30px;width:auto;display:block}
+.footer-wordmark{font-family:'Archivo',sans-serif;font-weight:600;font-size:15px;letter-spacing:-0.03em;color:var(--ink);border-bottom:2px solid var(--ink)}
 .footer-inner a{color:var(--grey)}
 .footer-inner a:hover{color:var(--red)}
 
@@ -191,7 +190,7 @@ footer{border-top:2px solid var(--ink)}
   section{scroll-margin-top:60px}
   .container{padding:52px 20px}
   .nav-inner{padding:0 20px;height:60px}
-  .logo{height:30px}
+  .wordmark{font-size:18px}
   .nav-link{display:none}
   .nav-cta{font-size:11px;padding:13px 16px;white-space:nowrap}
   .hero-grid{grid-template-columns:1fr;gap:0;padding:52px 20px 44px}
@@ -266,14 +265,7 @@ footer{border-top:2px solid var(--ink)}
 
 <nav id="nav" aria-label="Main">
   <div class="nav-inner">
-    <a href="#top" class="logo-link" aria-label="Nausta, back to top">
-      <svg class="logo" viewBox="0 0 320 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-        <line x1="14" y1="66" x2="94" y2="66" stroke="#262220" stroke-width="1.6" opacity="0.4"></line>
-        <path d="M14 66 L42 50 L66 55 L94 22" stroke="#262220" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
-        <circle cx="94" cy="22" r="5.4" fill="#262220"></circle>
-        <text x="120" y="63" font-family="Archivo, system-ui, sans-serif" font-size="38" letter-spacing="4" fill="#262220">NAUSTA</text>
-      </svg>
-    </a>
+    <a href="#top" class="wordmark">Nausta</a>
     <div class="nav-links">
       <a href="#services" class="nav-link">SERVICES</a>
       <a href="#people" class="nav-link">PEOPLE</a>
@@ -567,12 +559,7 @@ footer{border-top:2px solid var(--ink)}
 
 <footer>
   <div class="footer-inner">
-    <svg class="footer-logo" viewBox="0 0 320 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nausta">
-      <line x1="14" y1="66" x2="94" y2="66" stroke="#262220" stroke-width="1.6" opacity="0.4"></line>
-      <path d="M14 66 L42 50 L66 55 L94 22" stroke="#262220" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
-      <circle cx="94" cy="22" r="5.4" fill="#262220"></circle>
-      <text x="120" y="63" font-family="Archivo, system-ui, sans-serif" font-size="38" letter-spacing="4" fill="#262220">NAUSTA</text>
-    </svg>
+    <span class="footer-wordmark">Nausta</span>
     <span>LONDON</span>
     <span>EST. 2026</span>
     <span>REG. NO. [XXXXXXXX]</span>
